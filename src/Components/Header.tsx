@@ -1,8 +1,8 @@
-import React from 'react'
+import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../logo.png'
 
-function Header() {
+const Header: FC = () => {
   return (
     <div className="w-full">
       <div className="px-24 pt-4 flex justify-between items-center">
