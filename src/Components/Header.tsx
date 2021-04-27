@@ -1,8 +1,7 @@
-import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../logo.png'
 
-const Header: FC = () => {
+const Header = () => {
   return (
     <div className="w-full">
       <div className="px-24 pt-4 flex justify-between items-center">
@@ -11,14 +10,10 @@ const Header: FC = () => {
         </Link>
         <div className="flex">
           <div className="login__page">
-            <Link to="/login">
-              <h1>Login/Sign Up</h1>
-            </Link>
+            <Link to="/login">Login/Sign Up</Link>
           </div>
           <div className="ml-4">
-            <Link to="/checkout">
-              <h1>Basket</h1>
-            </Link>
+            <Link to="/checkout">Basket</Link>
           </div>
         </div>
       </div>
