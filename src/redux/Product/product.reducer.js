@@ -8,15 +8,14 @@ const INITIAL_STATE = {
       model: '275R',
       description: 'Airflow Tempered Glass Mid-Tower Gaming Case, Black',
       price: 80.0,
-      image: 'https://cdn.alzashop.com/ImgW.ashx?fd=f16&cd=gamax019'
+      image: 'https://elated-varahamihira-6701b4.netlify.app/static/media/case-1.5c013159.png'
     },
     {
       id: 2,
       brand: 'NZXT',
       model: 'H510 Elite',
       description: 'Premium Mid-Tower ATX Case PC Gaming Case',
-      price: 110.0,
-      image: '../Assets/_images/case-1.png'
+      price: 110.0
     },
     {
       id: 3,
@@ -31,8 +30,7 @@ const INITIAL_STATE = {
       brand: 'Thermaltake',
       model: 'S100',
       description: 'Tempered Glass Snow Edition Micro-ATX Mini-Tower Computer Case',
-      price: 75.0,
-      image: '../Assets/_images/case-1.png'
+      price: 75.0
     },
     {
       id: 5,
@@ -73,7 +71,8 @@ const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_TO_BASKET:
       return {
-        ...state
+        ...state,
+        basket: [ ...state.basket, action.product ]
       }
     default:
       return state
