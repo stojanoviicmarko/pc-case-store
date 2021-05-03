@@ -1,13 +1,10 @@
-import { FETCH_PRODUCT, ADD_PRODUCT } from './product.types'
+import { FETCH_PRODUCT } from './product.types'
 
-export const increaseCounter = () => {
-  return {
-    type: FETCH_PRODUCT
-  }
-}
-
-export const decreaseCounter = () => {
-  return {
-    type: ADD_PRODUCT
-  }
+export const fetchProducts = () => dispatch => {
+  fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json()).then(data =>
+    dispatch({
+      type: FETCH_PRODUCT,
+      payload: data
+    })
+  )
 }
