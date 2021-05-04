@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { ADD_TO_BASKET } from '../redux/Product/product.types'
 
-const Product = ({ id, name, image, price }) => {
+const Product = ({ id, name, image, price, model }) => {
   const dispatch = useDispatch()
   const handleClick = (e: any) => {
     dispatch({
@@ -10,23 +10,24 @@ const Product = ({ id, name, image, price }) => {
         id: id,
         brand: name,
         price: price,
-        image: image
+        image: image,
+        model: model
       }
     })
   }
 
-  const basket = useSelector((state: any) => state.productReducer.basket)
-  console.log(basket)
   return (
-    <div className="flex items-center justify-center p-8 flex-col text-sm hover:bg-gray-200 rounded-sm duration-150 shadow-lg justify-self-center">
-      <h1 className="mb-4">{name}</h1>
-      <p className="font-bold mb-4">{price}</p>
-      <img className="w-full" src={image} alt="product__image" />
+    <div className="flex items-center justify-center flex-col text-sm rounded-sm justify-self-center">
+      <img className="w-full p-4 bg-gray-100 hover:bg-gray-200 duration-150" src={image} alt="product__image" />
+      <h1 className="mt-2 font-bold lg:text-base text-xs">
+        {name.toUpperCase()} : {model}
+      </h1>
+      <p className="font-normal text-lg mt-2">${price}.00</p>
       <button
         onClick={handleClick}
-        className="mt-8 w-36 h-8 border border-gray-500 hover:bg-gray-500 rounded-sm hover:text-white active:bg-gray-800"
+        className="mt-2 w-36 h-8 border font-bold border-black hover:bg-primary rounded-sm hover:text-white"
       >
-        Add to basket
+        ADD TO CART
       </button>
     </div>
   )

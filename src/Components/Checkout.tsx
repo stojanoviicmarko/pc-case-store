@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 const Checkout = () => {
   const item = useSelector((state: any) => state.productReducer.basket)
   return (
-    <div className="flex flex-row justify-center items-end px-4 md:px-24 mt-24 flex-wrap-reverse">
+    <div className="flex flex-row justify-center items-end mt-24 flex-wrap-reverse">
       <div className="flex flex-col w-full sm:w-1/2">
         {item.map((i: any, index: number) => {
           return (
@@ -15,11 +15,14 @@ const Checkout = () => {
           )
         })}
       </div>
-      <div className="border w-64 h-36 flex flex-col justify-center items-center md:ml-8 mb-8 md:mb-0">
-        <h1>Your total is: 19.99</h1>
-        <button className="mt-8 w-48 h-8 border border-gray-500 hover:bg-gray-500 rounded-sm hover:text-white active:bg-gray-800">
-          Proceed to checkout
+      <div className="w-128 h-36 flex flex-col justify-center items-center md:ml-8 mb-8 md:mb-0">
+        <h1 className="font-semibold">
+          SUBTOTAL: <span className="font-bold">19.00</span>
+        </h1>
+        <button className="mt-8 w-48 h-8 border border-gray-500 hover:bg-gray-500 rounded-sm hover:text-white active:bg-gray-800 font-semibold">
+          Proceed to Checkout
         </button>
+        <p className="text-sm mt-4">Shipping & taxes calculated at checkout</p>
       </div>
     </div>
   )
