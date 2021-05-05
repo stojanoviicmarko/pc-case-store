@@ -1,24 +1,44 @@
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import { ReactComponent as CartLogo } from '../Assets/icons/bag.svg'
+import { ReactComponent as UserLogo } from '../Assets/icons/user.svg'
 
 const Header = () => {
   const basketItems = useSelector((state: any) => state.productReducer.basket)
+  console.log(basketItems)
   return (
-    <div className="w-full bg-primary">
+    <div className="w-full">
       <div className="px-12 flex justify-between items-center">
         <Link to="/">
           <img className="w-20 p-2" src="https://image.flaticon.com/icons/png/512/1/1480.png" alt="logo" />
         </Link>
         <div className="flex">
-          <div className="text-xl font-bold">
-            <Link to="/login">LOG IN</Link>
-          </div>
-          <div className="ml-12 flex justify-center items-center text-xl font-bold">
-            <Link to="/checkout">
-              <ShoppingCartIcon />
+          <div className="mx-8">
+            <Link to="/products">
+              <h1>PRODUCTS</h1>
             </Link>
-            <h1 className="w-12 ml-2 text-sm">{basketItems.length}</h1>
+          </div>
+          <div className="mx-8">
+            <Link to="/about">
+              <h1>ABOUT</h1>
+            </Link>
+          </div>
+          <div className="mx-8">
+            <Link to="/blog">
+              <h1>BLOG</h1>
+            </Link>
+          </div>
+        </div>
+        <div className="flex">
+          <div className="mr-4 w-8">
+            <Link to="/login">
+              <UserLogo />
+            </Link>
+          </div>
+          <div className="w-8">
+            <Link to="/checkout">
+              <CartLogo />
+            </Link>
           </div>
         </div>
       </div>
