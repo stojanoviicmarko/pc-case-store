@@ -1,7 +1,9 @@
+import { FC } from 'react'
 import { useSelector } from 'react-redux'
 
-const Checkout = () => {
-  const item = useSelector((state: any) => state.productReducer.basket)
+export const Checkout: FC = () => {
+  const item = useSelector((state: any) => state.product.basket)
+  console.log(item)
   return (
     <div className="flex flex-row justify-center items-end mt-24 flex-wrap-reverse">
       <div className="flex flex-col w-full sm:w-1/2">
@@ -27,5 +29,3 @@ const Checkout = () => {
     </div>
   )
 }
-
-export default Checkout

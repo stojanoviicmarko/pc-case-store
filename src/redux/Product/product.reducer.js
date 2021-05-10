@@ -1,7 +1,7 @@
 import { ADD_TO_BASKET } from './product.types'
 
 const INITIAL_STATE = {
-  products: [
+  arrayOfProducts: [
     {
       id: 1,
       brand: 'Corsair',

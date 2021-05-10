@@ -1,0 +1,32 @@
+.about {
+  margin-top: 7rem;
+}
+.about_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.about__text {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+}
+.about_text h1 {
+  font-size: 4rem;
+}
+.about__image {
+  margin: 2rem;
+  max-width: 45rem;
+  height: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .about_container {
+    flex-wrap: wrap;
+  }
+  .about__image {
+    margin: 1rem;
+    width: 100%;
+  }
+}

@@ -1,28 +1,24 @@
-const Login = () => {
+import { FC } from 'react'
+import '../styles/login.css'
+
+export const Login: FC = () => {
   return (
     <div className="login">
       <div className="login__container">
-        <h1>Sign-in</h1>
-
-        <form>
-          <h5>E-mail</h5>
-          <input type="email" />
-          <h5>Password</h5>
-          <input type="password" />
+        <h1 className="login__title">SIGN IN TO YOUR ACCOUNT</h1>
+        <form className="login__form">
+          <input className="email__input" type="email" placeholder="Email" />
+          <input className="password__input" type="password" placeholder="Password" />
           <button type="submit" className="login__signInButton">
-            Sign In
-          </button>s
+            SIGN IN
+          </button>
         </form>
-
-        <p>
-          By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please see our Privacy Notice, our
+        <button className="login__registerButton">Create your Account</button>
+        <p className="disclaimer">
+          By signing-in you agree to the PC Case Store Conditions of Use & Sale. Please see our Privacy Notice, our
           Cookies Notice and our Interest-Based Ads Notice.
         </p>
-
-        <button className="login__registerButton">Create your Amazon Account</button>
       </div>
     </div>
   )
 }
-
-export default Login

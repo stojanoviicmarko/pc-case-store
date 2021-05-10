@@ -1,11 +1,9 @@
-import { useSelector } from 'react-redux'
+import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as CartLogo } from '../Assets/icons/bag.svg'
-import { ReactComponent as UserLogo } from '../Assets/icons/user.svg'
+import { ReactComponent as CartLogo } from '../assets/icons/bag.svg'
+import { ReactComponent as UserLogo } from '../assets/icons/user.svg'
 
-const Header = () => {
-  const basketItems = useSelector((state: any) => state.productReducer.basket)
-  console.log(basketItems)
+export const Header: FC = () => {
   return (
     <div className="w-full">
       <div className="px-12 flex justify-between items-center">
@@ -45,5 +43,3 @@ const Header = () => {
     </div>
   )
 }
-
-export default Header

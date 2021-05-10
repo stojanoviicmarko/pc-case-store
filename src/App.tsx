@@ -1,13 +1,20 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Checkout from './Components/Checkout'
-import Header from './Components/Header'
-import Home from './Components/Home'
-import Login from './Components/Login'
+import { About } from './Components/About'
+import { Checkout } from './Components/Checkout'
+import { Footer } from './Components/Footer'
+import { Header } from './Components/Header'
+import { Home } from './Components/Home'
+import { Login } from './Components/Login'
 
 const App = () => {
   return (
     <Router>
       <Switch>
+        <Route path="/about">
+          <Header />
+          <About />
+          <Footer />
+        </Route>
         <Route path="/checkout">
           <Header />
           <Checkout />
@@ -18,6 +25,7 @@ const App = () => {
         <Route path="/">
           <Header />
           <Home />
+          <Footer />
         </Route>
       </Switch>
     </Router>

@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.root {
-  --tw-bg-opacity: 1;
-  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+:root {
+  margin: 0;
+  padding: 0;
+  --main-bg-color: rgba(243, 244, 246);
+  --border-color: rgb(26, 26, 26);
+  --secondary-bg-color: rgb(26, 26, 26);
+  --border-radius: 0.125rem;
 }

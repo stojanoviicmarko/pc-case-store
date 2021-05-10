@@ -1,15 +1,12 @@
+import { FC } from 'react'
 import { useSelector } from 'react-redux'
-import Product from './Product'
-import caseImage from '../Assets/_images/case-2.png'
-import headerImage from '../Assets/_images/header-image.jpg'
+import { Product } from './Product'
+import caseImage from '../assets/_images/case-2.png'
 
-const Home = () => {
-  const products = useSelector((state: any) => state.productReducer.products)
+export const Home: FC = () => {
+  const products = useSelector((state: any) => state.product.arrayOfProducts)
   return (
     <div>
-      <div className="w-full h-auto relative">
-        <img className="w-auto h-auto p-12 pt-0" src={headerImage} alt="header__image" />
-      </div>
       <div className="home container mx-auto px-6 sm:px-4 mt-8 h-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 grid-rows-1 gap-8">
           {products.map((p: any) => {
@@ -20,5 +17,3 @@ const Home = () => {
     </div>
   )
 }
-
-export default Home

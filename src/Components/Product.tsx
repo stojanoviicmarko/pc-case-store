@@ -1,9 +1,18 @@
+import { FC } from 'react'
 import { useDispatch } from 'react-redux'
 import { ADD_TO_BASKET } from '../redux/Product/product.types'
 
-const Product = ({ id, name, image, price, model }) => {
+interface productProps {
+  id: number
+  name: string
+  price: number
+  image: string
+  model: string
+}
+
+export const Product: FC<productProps> = ({ id, name, image, price, model }) => {
   const dispatch = useDispatch()
-  const handleClick = (e: any) => {
+  const handleClick = () => {
     dispatch({
       type: ADD_TO_BASKET,
       product: {
@@ -32,5 +41,3 @@ const Product = ({ id, name, image, price, model }) => {
     </div>
   )
 }
-
-export default Product
