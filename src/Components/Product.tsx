@@ -27,7 +27,7 @@ export const Product: FC<productProps> = ({ id, name, image, price, model }) => 
 
   return (
     <div className="flex items-center justify-center flex-col text-sm rounded-sm justify-self-center">
-      <img className="w-full p-4 bg-gray-100 hover:bg-gray-200 duration-150" src={image} alt="product__image" />
+      <img className="h-56 p-4 bg-gray-100 hover:bg-gray-200 duration-150" src={image} alt="product__image" />
       <h1 className="mt-2 font-bold lg:text-base text-xs">
         {name.toUpperCase()} : {model}
       </h1>
