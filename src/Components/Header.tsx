@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as CartLogo } from '../assets/icons/bag.svg'
-import { ReactComponent as UserLogo } from '../assets/icons/user.svg'
+import userLogo from '../assets/icons/user.svg'
+import cartLogo from '../assets/icons/bag.svg'
 
 export const Header: FC = () => {
   return (
@@ -30,12 +30,12 @@ export const Header: FC = () => {
         <div className="flex">
           <div className="mr-4 w-8">
             <Link to="/login">
-              <UserLogo />
+              <img src={userLogo} alt="user__logo" />
             </Link>
           </div>
           <div className="w-8">
             <Link to="/checkout">
-              <CartLogo />
+              <img src={cartLogo} alt="cart__logo" />
             </Link>
           </div>
         </div>
