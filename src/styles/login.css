@@ -43,6 +43,10 @@
   border: 1px solid var(--secondary-bg-color);
   border-radius: var(--border-radius);
 }
+.error__message {
+  margin-top: 0.5rem;
+  color: red;
+}
 .disclaimer {
   width: 25rem;
   text-align: center;

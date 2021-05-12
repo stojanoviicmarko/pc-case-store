@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { About } from './Components/About'
 import { Checkout } from './Components/Checkout'
@@ -5,6 +6,7 @@ import { Footer } from './Components/Footer'
 import { Header } from './Components/Header'
 import { Home } from './Components/Home'
 import { Login } from './Components/Login'
+import { Registration } from './Components/Registration'
 
 const App = () => {
   return (
@@ -18,6 +20,9 @@ const App = () => {
         <Route path="/checkout">
           <Header />
           <Checkout />
+        </Route>
+        <Route path="/register">
+          <Registration />
         </Route>
         <Route path="/login">
           <Login />
