@@ -1,10 +1,6 @@
-import { FETCH_PRODUCT } from './product.types'
+import * as types from './product.types'
 
-export const fetchProducts = () => dispatch => {
-  fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json()).then(data =>
-    dispatch({
-      type: FETCH_PRODUCT,
-      payload: data
-    })
-  )
-}
+export const addToBasket = product => ({
+  type: types.ADD_TO_BASKET,
+  product
+})

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useDispatch } from 'react-redux'
-import { ADD_TO_BASKET } from '../redux/Product/product.types'
+import { addToBasket } from '../redux/Product/product.actions'
 
 interface productProps {
   id: number
@@ -13,16 +13,15 @@ interface productProps {
 export const Product: FC<productProps> = ({ id, name, image, price, model }) => {
   const dispatch = useDispatch()
   const handleClick = () => {
-    dispatch({
-      type: ADD_TO_BASKET,
-      product: {
+    dispatch(
+      addToBasket({
         id: id,
         brand: name,
         price: price,
         image: image,
         model: model
-      }
-    })
+      })
+    )
   }
 
   return (

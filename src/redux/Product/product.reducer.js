@@ -1,6 +1,6 @@
 import { ADD_TO_BASKET } from './product.types'
 
-const INITIAL_STATE = {
+const initialState = {
   arrayOfProducts: [
     {
       id: 1,
@@ -77,7 +77,7 @@ const INITIAL_STATE = {
   ],
   basket: []
 }
-const reducer = (state = INITIAL_STATE, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_BASKET:
       return {
