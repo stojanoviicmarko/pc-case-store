@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
+import '../styles/checkout.css'
 
 export const Checkout: FC = () => {
   const item = useSelector((state: any) => state.product.basket)
   console.log(item)
   return (
-    <div className="flex flex-row justify-center items-end mt-24 flex-wrap-reverse">
-      <div className="flex flex-col w-full sm:w-1/2">
+    <div className="checkout">
+      <div className="checkout__products">
         {item.map((i: any, index: number) => {
           return (
             <div key={index} className="border flex flex-col md:flex-row h-48 items-center p-4 mb-4">
@@ -17,14 +18,12 @@ export const Checkout: FC = () => {
           )
         })}
       </div>
-      <div className="w-128 h-36 flex flex-col justify-center items-center md:ml-8 mb-8 md:mb-0">
-        <h1 className="font-semibold">
+      <div className="checkout__total">
+        <h1 className="total__price">
           SUBTOTAL: <span className="font-bold">19.00</span>
         </h1>
-        <button className="mt-8 w-48 h-8 border border-gray-500 hover:bg-gray-500 rounded-sm hover:text-white active:bg-gray-800 font-semibold">
-          Proceed to Checkout
-        </button>
-        <p className="text-sm mt-4">Shipping & taxes calculated at checkout</p>
+        <button className="total__button">Proceed to Checkout</button>
+        <p className="total__paragraph">Shipping & taxes calculated at checkout</p>
       </div>
     </div>
   )

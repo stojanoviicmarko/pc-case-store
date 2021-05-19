@@ -15,7 +15,6 @@ const App = () => {
         <Route path="/about">
           <Header />
           <About />
-          <Footer />
         </Route>
         <Route path="/checkout">
           <Header />
@@ -30,9 +29,9 @@ const App = () => {
         <Route path="/">
           <Header />
           <Home />
-          <Footer />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   )
 }

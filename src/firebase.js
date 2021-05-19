@@ -1,8 +1,7 @@
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import firebase from 'firebase/app'
-import 'firebase/database'
-import 'firebase/auth'
 import 'firebase/firestore'
+import 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDbLhhtfEKZ6SB1o9sbn5buhWd9oeVQ3Dk',
@@ -16,4 +15,4 @@ const firebaseConfig = {
 
 export const firebaseApp = firebase.initializeApp(firebaseConfig)
 export const auth = firebaseApp.auth()
-export const firestore = firebaseApp.firestore()
+export const db = firebase.firestore()

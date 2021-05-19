@@ -1,4 +1,4 @@
-import { ADD_TO_BASKET } from './product.types'
+import { ADD_TO_BASKET, RECEIVE_PRODUCTS } from './product.types'
 
 const initialState = {
   arrayOfProducts: [
@@ -75,7 +75,8 @@ const initialState = {
         'https://firebasestorage.googleapis.com/v0/b/pc-case-store.appspot.com/o/images%2Fcase-6.png?alt=media&token=f0adae48-70c1-404b-bf43-6d85c07d0cc7'
     }
   ],
-  basket: []
+  basket: [],
+  products: []
 }
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -83,6 +84,10 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         basket: [ ...state.basket, action.product ]
+      }
+    case RECEIVE_PRODUCTS:
+      return {
+        products: action.products
       }
     default:
       return state

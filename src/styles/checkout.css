@@ -1,0 +1,23 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 3rem;
+}
+.checkout__products {
+  width: 100%;
+}
+.checkout__total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 20rem;
+}
+.total__price {
+  font-size: 20px;
+}
+.total__button {
+  border: 1px solid var(--border-color);
+  width: 12rem;
+  height: 2.5rem;
+}
