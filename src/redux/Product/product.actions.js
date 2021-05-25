@@ -15,3 +15,10 @@ const recieveProducts = products => {
 export const fetchProducts = () => dispatch => {
   fetch('./products.json').then(data => data.json()).then(products => dispatch(recieveProducts(products)))
 }
+
+export const removeFromBasket = item => {
+  return {
+    type: types.REMOVE_FROM_BASKET,
+    item
+  }
+}

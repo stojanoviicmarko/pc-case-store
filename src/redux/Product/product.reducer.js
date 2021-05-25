@@ -1,4 +1,4 @@
-import { ADD_TO_BASKET, RECEIVE_PRODUCTS } from './product.types'
+import { ADD_TO_BASKET, RECEIVE_PRODUCTS, REMOVE_FROM_BASKET } from './product.types'
 
 const initialState = {
   arrayOfProducts: [
@@ -88,6 +88,18 @@ const reducer = (state = initialState, action) => {
     case RECEIVE_PRODUCTS:
       return {
         products: action.products
+      }
+    case REMOVE_FROM_BASKET:
+      let index = state.basket.findIndex(basketItem => basketItem.id === action.item.id)
+      let modifiedBasket = [ ...state.basket ]
+      if (index >= 0) {
+        modifiedBasket.splice(index, 1)
+      } else {
+        console.warn("Couldn't find basket item to remove.'")
+      }
+      return {
+        ...state,
+        basket: modifiedBasket
       }
     default:
       return state

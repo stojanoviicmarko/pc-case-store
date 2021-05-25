@@ -9,7 +9,17 @@ export const Home: FC = () => {
       <div className="home container mx-auto px-6 sm:px-4 mt-8 h-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 grid-rows-1 gap-8">
           {products.map((p: any) => {
-            return <Product key={p.id} id={p.id} name={p.brand} price={p.price} image={p.image} model={p.model} />
+            return (
+              <Product
+                key={p.id}
+                id={p.id}
+                name={p.brand}
+                price={p.price}
+                image={p.image}
+                model={p.model}
+                description={p.description}
+              />
+            )
           })}
         </div>
       </div>

@@ -9,9 +9,10 @@ interface productProps {
   price: number
   image: string
   model: string
+  description: string
 }
 
-export const Product: FC<productProps> = ({ id, name, image, price, model }) => {
+export const Product: FC<productProps> = ({ id, name, image, price, model, description }) => {
   const dispatch = useDispatch()
   const handleClick = () => {
     dispatch(
@@ -20,7 +21,8 @@ export const Product: FC<productProps> = ({ id, name, image, price, model }) => 
         brand: name,
         price: price,
         image: image,
-        model: model
+        model: model,
+        description: description
       })
     )
   }
