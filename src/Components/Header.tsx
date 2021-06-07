@@ -2,15 +2,16 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import userLogo from '../assets/icons/user.svg'
 import cartLogo from '../assets/icons/bag.svg'
+import '../styles/header.css'
 
 export const Header: FC = () => {
   return (
-    <div className="w-full">
-      <div className="px-12 flex justify-between items-center">
+    <div className="header">
+      <div className="header__navbar">
         <Link to="/">
-          <img className="w-20 p-2" src="https://image.flaticon.com/icons/png/512/1/1480.png" alt="logo" />
+          <h1 className="home__icon">HOME</h1>
         </Link>
-        <div className="flex">
+        <div className="navbar__links">
           <div className="mx-8">
             <Link to="/products">
               <h1>PRODUCTS</h1>
@@ -27,13 +28,13 @@ export const Header: FC = () => {
             </Link>
           </div>
         </div>
-        <div className="flex">
-          <div className="mr-4 w-8">
+        <div className="navbar__icons">
+          <div className="navbar__login">
             <Link to="/login">
               <img src={userLogo} alt="user__logo" />
             </Link>
           </div>
-          <div className="w-8">
+          <div className="navbar__cart">
             <Link to="/checkout">
               <img src={cartLogo} alt="cart__logo" />
             </Link>
