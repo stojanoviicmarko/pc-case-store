@@ -1,5 +1,6 @@
 .header {
   padding: 0 3rem 0 5rem;
+  background: var(--secondary-bg-color);
 }
 .header__navbar {
   width: 100%;
@@ -7,6 +8,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.header__navbar a {
+  text-decoration: none;
 }
 .navbar__links {
   width: 100%;
@@ -18,7 +22,7 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 400;
-  color: var(--secondary-bg-color);
+  color: white;
   margin: 0 1rem 0 1rem;
 }
 .navbar__icons {
@@ -28,14 +32,16 @@
   width: 80px;
 }
 .home__icon {
-  width: 50px;
+  width: 200px;
   text-decoration: none;
-  color: var(--secondary-bg-color);
+  color: white;
 }
 
 .navbar__login {
   width: 25px;
+  filter: invert(100%);
 }
 .navbar__cart {
   width: 25px;
+  filter: invert(100%);
 }

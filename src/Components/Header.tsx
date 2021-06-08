@@ -9,7 +9,7 @@ export const Header: FC = () => {
     <div className="header">
       <div className="header__navbar">
         <Link to="/">
-          <h1 className="home__icon">HOME</h1>
+          <h1 className="home__icon">CASE STORE</h1>
         </Link>
         <div className="navbar__links">
           <div className="mx-8">
