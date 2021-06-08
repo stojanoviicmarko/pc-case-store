@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeFromBasket } from '../redux/Product/product.actions'
 import '../styles/checkout.css'
@@ -6,6 +6,17 @@ import '../styles/checkout.css'
 export const Checkout: FC = () => {
   const dispatch = useDispatch()
   const item = useSelector((state: any) => state.product.basket)
+  const [ total, setTotal ] = useState(0)
+
+  useEffect(
+    () => {
+      let total = 0
+      item.map((i: any) => (total += i.price))
+      setTotal(total)
+    },
+    [ item ]
+  )
+
   return (
     <div className="checkout">
       <div className="checkout__products">
@@ -29,7 +40,7 @@ export const Checkout: FC = () => {
       </div>
       <div className="checkout__total">
         <h1 className="total__price">
-          SUBTOTAL: <span className="font-bold">19.00</span>
+          SUBTOTAL: <span className="font-bold">{total}</span>
         </h1>
         <button className="total__button">PROCEED TO CHECKOUT</button>
         <p className="total__paragraph">Shipping & taxes calculated at checkout</p>
