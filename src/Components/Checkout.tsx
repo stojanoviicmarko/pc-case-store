@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import NumberFormat from 'react-number-format'
 import { removeFromBasket } from '../redux/Product/product.actions'
 import '../styles/checkout.css'
 
@@ -40,7 +41,15 @@ export const Checkout: FC = () => {
       </div>
       <div className="checkout__total">
         <h1 className="total__price">
-          SUBTOTAL: <span className="font-bold">{total}</span>
+          SUBTOTAL:
+          <NumberFormat
+            value={total}
+            displayType={'text'}
+            thousandSeparator={true}
+            decimalScale={2}
+            fixedDecimalScale={true}
+            prefix={'$'}
+          />
         </h1>
         <button className="total__button">PROCEED TO CHECKOUT</button>
         <p className="total__paragraph">Shipping & taxes calculated at checkout</p>
