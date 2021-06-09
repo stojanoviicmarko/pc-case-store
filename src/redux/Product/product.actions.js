@@ -5,17 +5,6 @@ export const addToBasket = product => ({
   product
 })
 
-const recieveProducts = products => {
-  return {
-    type: types.RECEIVE_PRODUCTS,
-    products
-  }
-}
-
-export const fetchProducts = () => dispatch => {
-  fetch('./products.json').then(data => data.json()).then(products => dispatch(recieveProducts(products)))
-}
-
 export const removeFromBasket = item => {
   return {
     type: types.REMOVE_FROM_BASKET,

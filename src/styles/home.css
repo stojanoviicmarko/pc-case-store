@@ -6,7 +6,7 @@
   align-items: center;
 }
 .home__products {
-  width: 75%;
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(2, 1fr);
@@ -27,7 +27,7 @@
   position: absolute;
   top: 20%;
   left: 50px;
-  font-size: 60px;
+  font-size: 50px;
 }
 .jumbotron__paragraph {
   position: absolute;
@@ -39,9 +39,15 @@
   position: absolute;
   top: 60%;
   left: 50px;
-  font-size: 40px;
-  border: 1px solid var(--border-color);
+  font-size: 30px;
+  border: 3px solid rgb(177, 0, 0);
   padding: 0.6rem;
+}
+.jumbotron__button:hover {
+  background: var(--secondary-bg-color);
+  color: white;
+  transition: background 300ms, color 300ms;
+  cursor: pointer;
 }
 @media (max-width: 1150px) {
   .home__products {
