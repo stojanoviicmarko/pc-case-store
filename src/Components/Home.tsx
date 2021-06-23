@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
 import { Product } from './Product'
-import '../styles/home.css'
 import homeImage from '../assets/jumbotron-image.png'
+import '../styles/home.css'
 
 export const Home: FC = () => {
-  const products = useSelector((state: any) => state.product.arrayOfProducts)
+  const products = useSelector((state: any) => state.product.products)
   return (
     <div className="home">
       <div className="home__jumbotron">
@@ -15,12 +15,12 @@ export const Home: FC = () => {
         <button className="jumbotron__button">SHOP NOW</button>
       </div>
       <div className="home__products">
-        {products.map((p: any) => {
+        {products.map((p: any, index: number) => {
           return (
             <Product
-              key={p.id}
+              key={index}
               id={p.id}
-              name={p.brand}
+              brand={p.brand}
               price={p.price}
               image={p.image}
               model={p.model}

@@ -5,20 +5,20 @@ import '../styles/product.css'
 
 interface productProps {
   id: number
-  name: string
+  brand: string
   price: number
   image: string
   model: string
   description: string
 }
 
-export const Product: FC<productProps> = ({ id, name, image, price, model, description }) => {
+export const Product: FC<productProps> = ({ id, brand, image, price, model, description }) => {
   const dispatch = useDispatch()
   const handleClick = () => {
     dispatch(
       addToBasket({
         id: id,
-        brand: name,
+        brand: brand,
         price: price,
         image: image,
         model: model,
@@ -31,7 +31,7 @@ export const Product: FC<productProps> = ({ id, name, image, price, model, descr
     <div className="product">
       <img className="product__image" src={image} alt="product__image" />
       <h1 className="product__title">
-        {name.toUpperCase()} : {model}
+        {brand.toUpperCase()} : {model}
       </h1>
       <p className="product__price">${price}.00</p>
       <button onClick={handleClick} className="product__button">
