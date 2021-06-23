@@ -1,5 +1,5 @@
 .header {
-  padding: 0 3rem 0 5rem;
+  padding: 0 10rem 0 10rem;
   background: var(--secondary-bg-color);
 }
 .header__navbar {
@@ -20,11 +20,11 @@
   margin-right: 2rem;
 }
 .navbar__links * {
+  margin: 0 0.5rem 0 0.5rem;
   text-decoration: none;
   font-size: 18px;
   font-weight: 400;
   color: white;
-  margin: 0 1rem 0 1rem;
 }
 .navbar__icons {
   display: flex;
@@ -45,16 +45,22 @@
 .navbar__cart {
   width: 25px;
   filter: invert(100%);
+  margin-left: 19px;
 }
 
 @media (max-width: 850px) {
   .header {
     padding: 0 1rem 0 1rem;
+    font-size: 13px;
   }
   .navbar__links * {
     margin: 0 0.3rem 0 0.3rem;
+    font-size: 13px;
   }
   .navbar__cart {
     margin-left: 8px;
+  }
+  .home__icon {
+    width: 160px;
   }
 }

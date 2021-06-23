@@ -14,17 +14,17 @@ export const Header: FC = () => {
         <div className="navbar__links">
           <div className="mx-8">
             <Link to="/products">
-              <h1>PRODUCTS</h1>
+              <h1>Products</h1>
             </Link>
           </div>
           <div className="mx-8">
             <Link to="/about">
-              <h1>ABOUT</h1>
+              <h1>About</h1>
             </Link>
           </div>
           <div className="mx-8">
             <Link to="/blog">
-              <h1>BLOG</h1>
+              <h1>Blog</h1>
             </Link>
           </div>
         </div>

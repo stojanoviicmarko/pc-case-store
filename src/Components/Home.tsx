@@ -1,11 +1,33 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Product } from './Product'
+<<<<<<< HEAD
+=======
+import { db } from '../firebase'
+import '../styles/home.css'
+>>>>>>> b6cb80dccf47023091df6832630f199813b4a9d3
 import homeImage from '../assets/jumbotron-image.png'
 import '../styles/home.css'
 
 export const Home: FC = () => {
+<<<<<<< HEAD
   const products = useSelector((state: any) => state.product.products)
+=======
+  const products = useSelector((state: any) => state.product.arrayOfProducts)
+
+  useEffect(() => {
+    fetchBlogs()
+  })
+
+  const fetchBlogs = async () => {
+    db.collection('products').get().then(snapshot => {
+      snapshot.forEach(doc => {
+        console.log(snapshot)
+      })
+    })
+  }
+
+>>>>>>> b6cb80dccf47023091df6832630f199813b4a9d3
   return (
     <div className="home">
       <div className="home__jumbotron">
