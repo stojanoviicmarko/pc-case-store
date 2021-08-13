@@ -10,26 +10,28 @@ import { Registration } from './Components/Registration'
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/about">
-          <Header />
-          <About />
-        </Route>
-        <Route path="/checkout">
-          <Header />
-          <Checkout />
-        </Route>
-        <Route path="/register">
-          <Registration />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/">
-          <Header />
-          <Home />
-        </Route>
-      </Switch>
+      <div className="content-container">
+        <Switch>
+          <Route path="/about">
+            <Header />
+            <About />
+          </Route>
+          <Route path="/checkout">
+            <Header />
+            <Checkout />
+          </Route>
+          <Route path="/register">
+            <Registration />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </div>
       <Footer />
     </Router>
   )

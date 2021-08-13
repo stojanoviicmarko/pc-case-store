@@ -17,7 +17,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 2rem;
 }
 .navbar__links * {
   margin: 0 0.5rem 0 0.5rem;
@@ -36,6 +35,16 @@
   width: 200px;
   text-decoration: none;
   color: white;
+}
+.shopping__bag{
+  height: 35px;
+  color: blueviolet;
+}
+.shopping__bag :visited{
+  color: blueviolet;
+}
+.shopping__bag:active{
+  color: blueviolet;
 }
 
 .navbar__login {

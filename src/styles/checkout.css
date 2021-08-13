@@ -22,6 +22,7 @@
   border: 1px solid var(--border-color);
   width: 15rem;
   height: 2.5rem;
+  cursor: pointer;
 }
 .total__button:hover {
   background: var(--secondary-bg-color);
@@ -69,6 +70,7 @@
 }
 .checkout__remove__button {
   margin: 0.1rem;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

@@ -12,3 +12,6 @@
   --secondary-bg-color: rgb(26, 26, 26);
   --border-radius: 0.125rem;
 }
+.content-container {
+  min-height: calc(100vh - 50px);
+}
