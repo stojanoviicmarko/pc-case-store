@@ -1,32 +1,34 @@
 import { FC, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
-import { auth } from '../firebase.js'
+import { signIn } from '../store/auth/user.actions'
+import '../styles/login.css'
 
-export const Registration: FC = () => {
+export const Login: FC = () => {
+  const dispatch = useDispatch()
+  const error = useSelector((state: any) => state.auth.authMessage)
   const history = useHistory()
-  const [currentUser, setCurrentUser] = useState<any | null>(null)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
 
-  const signUp = async (e: any) => {
+  const handleSignIn = async (e) => {
     e.preventDefault()
-    try {
-      auth.createUserWithEmailAndPassword(email, password)
-      setCurrentUser(true)
-    } catch (error) {
-      setErrorMessage(error.message)
-    }
-    if (currentUser) {
-      history.push('/')
-    }
+    dispatch(
+      signIn(email, password, () => {
+        history.push('/')
+      })
+    )
+  }
+
+  const handleRegisterRedirect = (e) => {
+    history.push('/register')
   }
 
   return (
     <div className="login">
       <div className="login__container">
-        <h1 className="login__title">REGISTER YOUR NEW ACCOUNT</h1>
-        <form className="login__form" onSubmit={signUp}>
+        <h1 className="login__title">SIGN IN TO YOUR ACCOUNT</h1>
+        <form className="login__form" onSubmit={handleSignIn}>
           <input
             onChange={(e) => {
               setEmail(e.target.value)
@@ -43,12 +45,17 @@ export const Registration: FC = () => {
             type="password"
             placeholder="Password"
           />
-
           <button type="submit" className="login__signInButton">
-            CREATE YOUR ACCOUNT
+            SIGN IN
           </button>
         </form>
-        <div className="error__message">{errorMessage}</div>
+        <button
+          className="login__registerButton"
+          onClick={handleRegisterRedirect}
+        >
+          Create your Account
+        </button>
+        <div className="error__message">{error}</div>
         <p className="disclaimer">
           By signing-in you agree to the PC Case Store Conditions of Use & Sale.
           Please see our Privacy Notice, our Cookies Notice and our

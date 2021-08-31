@@ -8,7 +8,7 @@
   height: 50px;
   background: var(--secondary-bg-color);
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 .title {

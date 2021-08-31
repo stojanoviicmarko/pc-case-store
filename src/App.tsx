@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { About } from './Components/About'
-import { Checkout } from './Components/Checkout'
-import { Footer } from './Components/Footer'
-import { Header } from './Components/Header'
-import { Home } from './Components/Home'
-import { Login } from './Components/Login'
-import { Registration } from './Components/Registration'
+import { About } from './components/About'
+import { Checkout } from './components/Checkout'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
+import { Home } from './components/Home'
+import { Login } from './components/Login'
+import { Registration } from './components/Registration'
+import Wishlist from './components/Wishlist'
 
 const App = () => {
   return (
@@ -15,6 +16,10 @@ const App = () => {
           <Route path="/about">
             <Header />
             <About />
+          </Route>
+          <Route path="/wishlist">
+            <Header />
+            <Wishlist />
           </Route>
           <Route path="/checkout">
             <Header />

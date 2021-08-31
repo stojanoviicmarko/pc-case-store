@@ -56,7 +56,6 @@
   filter: invert(100%);
   margin-left: 19px;
 }
-
 @media (max-width: 850px) {
   .header {
     padding: 0 1rem 0 1rem;

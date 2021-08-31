@@ -1,11 +1,14 @@
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import firebase from 'firebase/app'
+import 'firebase/database'
 import 'firebase/firestore'
 import 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDbLhhtfEKZ6SB1o9sbn5buhWd9oeVQ3Dk',
   authDomain: 'pc-case-store.firebaseapp.com',
+  databaseURL:
+    'https://pc-case-store-default-rtdb.europe-west1.firebasedatabase.app',
   projectId: 'pc-case-store',
   storageBucket: 'pc-case-store.appspot.com',
   messagingSenderId: '404721314800',
@@ -14,7 +17,8 @@ const firebaseConfig = {
 }
 
 const firebaseApp = firebase.initializeApp(firebaseConfig)
+const database = firebaseApp.database()
 const db = firebaseApp.firestore()
 const auth = firebase.auth()
 
-export { db, auth }
+export { db, auth, database }

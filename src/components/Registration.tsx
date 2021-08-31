@@ -1,38 +1,30 @@
 import { FC, useState } from 'react'
-import { useHistory } from 'react-router'
-import { auth } from '../firebase'
-import '../styles/login.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { signUp } from '../store/auth/user.actions.js'
 
-export const Login: FC = () => {
+export const Registration: FC = () => {
+  const dispatch = useDispatch()
   const history = useHistory()
-  const [currentUser, setCurrentUser] = useState<any | null>(null)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
+  const [rePassword, setRePassword] = useState('')
+  const error = useSelector((state: any) => state.auth.authMessage)
 
-  const signIn = (e: any) => {
+  const handleSignUp = async (e: any) => {
     e.preventDefault()
-    try {
-      auth.signInWithEmailAndPassword(email, password)
-      setCurrentUser(true)
-    } catch (error) {
-      setErrorMessage(error.message)
-      console.log(error.message)
-    }
-    if (currentUser) {
-      history.push('/')
-    }
-  }
-
-  const handleRegister = () => {
-    history.push('/register')
+    dispatch(
+      signUp(email, password, rePassword, () => {
+        history.push('/')
+      })
+    )
   }
 
   return (
     <div className="login">
       <div className="login__container">
-        <h1 className="login__title">SIGN IN TO YOUR ACCOUNT</h1>
-        <form className="login__form" onSubmit={signIn}>
+        <h1 className="login__title">REGISTER YOUR NEW ACCOUNT</h1>
+        <form className="login__form" onSubmit={handleSignUp}>
           <input
             onChange={(e) => {
               setEmail(e.target.value)
@@ -49,14 +41,20 @@ export const Login: FC = () => {
             type="password"
             placeholder="Password"
           />
+          <input
+            onChange={(e) => {
+              setRePassword(e.target.value)
+            }}
+            className="password__input"
+            type="password"
+            placeholder="Retype your password"
+          />
+
           <button type="submit" className="login__signInButton">
-            SIGN IN
+            CREATE YOUR ACCOUNT
           </button>
+          <div className="error__message">{error}</div>
         </form>
-        <button onClick={handleRegister} className="login__registerButton">
-          Create your Account
-        </button>
-        <div className="error__message">{errorMessage}</div>
         <p className="disclaimer">
           By signing-in you agree to the PC Case Store Conditions of Use & Sale.
           Please see our Privacy Notice, our Cookies Notice and our

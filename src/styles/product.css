@@ -37,3 +37,18 @@
   text-align: center;
   transition: background 300ms, color 300ms;
 }
+.product__wishlist {
+  border: 1px solid var(--border-color);
+  width: 10rem;
+  height: 2rem;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.product__wishlist:hover{
+  background: var(--secondary-bg-color);
+  color: white;
+  text-align: center;
+  transition: background 300ms, color 300ms;
+}
